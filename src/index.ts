@@ -4,4 +4,4 @@ console.log('Desde index.ts')
 
 sumar()
 
-console.log('Después de sumar')
+console.log('Después de sumar otra vez')
