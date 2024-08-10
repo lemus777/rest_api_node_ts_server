@@ -1,26 +1,8 @@
 import express from 'express';
+import router from './router';
 
 const server = express()
 
-// Routing
-server.get('/', (req, res) => {
-  res.json('Desde GET')
-})
-
-server.post('/', (req, res) => {
-  res.json('Desde POST')
-})
-
-server.put('/', (req, res) => {
-  res.json('Desde PUT')
-})
-
-server.patch('/', (req, res) => {
-  res.json('Desde PATCH')
-})
-
-server.delete('/', (req, res) => {
-  res.json('Desde DELETE')
-})
+server.use('/api/products', router)
 
 export default server
