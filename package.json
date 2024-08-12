@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "nodemon --exec ts-node src/index.ts",
-    "test": "jest"
+    "test": "jest --detectOpenHandles"
   },
   "author": "Jorge Lemus Pérez",
   "license": "ISC",
