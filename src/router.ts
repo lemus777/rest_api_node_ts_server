@@ -34,7 +34,7 @@ const router = Router()
  * @swagger
  * /api/products:
  *  get:
- *    summary: Get a list of products
+ *    summary: Gets a list of products
  *    tags:
  *      - Products
  *    description: Return a list of products
@@ -56,7 +56,7 @@ router.get('/', getProducts)
  * @swagger
  * /api/products/{id}:
  *  get:
- *    summary: Get a product by ID
+ *    summary: Gets a product by ID
  *    tags:
  *      - Products
  *    description: Return a product based on its unique ID
@@ -187,6 +187,34 @@ router.put('/:id',
   handleInputErrors,
   updateProduct
 )
+
+/**
+ * @swagger
+ * /api/products/{id}:
+ *  patch:
+ *    summary: Updates product availability
+ *    tags:
+ *      - Products
+ *    description: Returns the updated availability
+ *    parameters:
+ *    - in: path
+ *      name: id
+ *      description: The ID of the product to retrieve
+ *      required: true
+ *      schema:
+ *        type: integer
+ *    responses:
+ *      200:
+ *        description: Successful response
+ *        content:
+ *          application/json:
+ *            schema:
+ *              $ref: '#/components/schemas/Product'
+ *      400:
+ *        description: Bad request - Invalid ID
+ *      404:
+ *        description: Product not found
+ */
 
 router.patch('/:id',
   param('id').isInt().withMessage('ID no válido'),
